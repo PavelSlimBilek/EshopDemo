@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Search results</title>
+        <link rel="stylesheet" href="mainstyle.css">
+    </head>
+
+    <body>
+        <header>
+            <h1 class="logo">Very Special Music Store</h1>
+
+            <form action="/search" method="get">
+                <select name="ascending">
+                    <option th:value="''" th:text="'SORT'"></option>
+                    <option th:value="'true'" th:text="'ASCENDING PRICE'"></option>
+                    <option th:value="'false'" th:text="'DESCENDING PRICE'"></option>
+                </select>
+                <label class="productName">
+                        Available only
+                        <input type="checkbox" name="available">
+                    </label>
+                <input type="text" name="min" placeholder="MIN PRICE">
+                <input type="text" name="max" placeholder="MAX PRICE">
+                <select name="type">
+                    <option th:value="''" th:text="'PRODUCT TYPE'"></option>
+                    <option th:each="type : ${types}" th:value="${type}" th:text="${type}"></option>
+                </select>
+                <select name="brand">
+                    <option th:value="''" th:text="'BRAND'"></option>
+                    <option th:each="brand: ${brands}" th:value="${brand}" th:text="${brand}"></option>
+                </select>
+
+                <input type="text" name="name" placeholder="SEARCH">
+                <input type="submit" value="SUBMIT">
+            </form>
+        </header>
+
+        <main>
+                <div class="productContainer" th:each="prod : ${searchPool}">
+                    <div class="imageContainer">
+                        <img th:src="@{${prod.imgPath}}" th:alt="${prod.getName()}" />
+                    </div>
+                    <h3 class="productName" th:text="${prod.getName()}"></h3>
+                    <p class="productPrice" th:text="${prod.getBalInString()}"></p>
+                    <p class="stockStatus" th:text="${prod.getStockStatus()}"></p>
+                </div>
+        </main>
+
+    </body>
+</html>

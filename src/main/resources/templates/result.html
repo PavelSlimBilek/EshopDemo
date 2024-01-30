@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="totalWrapper">
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Brand</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr th:each="item : ${searchPool}">
+                <td th:text="${item.getId()}"></td>
+                <td th:text="${item.getType().toString()}"></td>
+                <td th:text="${item.getBrand().toString()}"></td>
+                <td th:text="${item.getName()}"></td>
+                <td th:text="${item.getDescription()}"></td>
+                <td th:text="${item.getPrice()}"></td>
+                <td th:text="${item.getQuantity()}"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

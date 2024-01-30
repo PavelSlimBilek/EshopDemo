@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+    font-family: Arial;
+    box-sizing:border-box;
+}
+
+body {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+header, main {
+    display: block;
+    min-width: 34rem;
+    max-width: 207rem;
+    background-color: white;
+    padding: 1rem;
+    margin: 2rem 6%;
+    box-shadow: 6px 4px 6px 4px lightgray;
+    border-radius: 0.3rem;
+}
+
+main div {
+    border-radius: 0.4rem;
+    padding: 1rem;
+}
+
+.productContainer {
+    background-color: white;
+    width: 16rem;
+    height: 26rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.4rem;
+    border: 1px solid lightgray;
+}
+
+.productContainer:hover {
+    box-shadow: 0 0 5px 2px lightskyblue;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.imageContainer {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 14rem;
+}
+
+input[type="checkbox"] {
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+}
+
+form > * {
+    padding: 1rem;
+    margin: 0.1rem;
+}
+
+img {
+    max-width: 11rem;
+    max-height: 14rem;
+}
+
+.productName {
+    font-weight: bolder;
+    font-style: normal;
+    color: darkslategray;
+    margin: 1.3rem;
+}
+
+.productPrice {
+    font-weight: bold;
+    color: green;
+}
+
+.stockStatus {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+.logo {
+    font-size: 3rem;
+    color: cornflowerblue;
+    margin: 0rem 0rem 1rem
+}
