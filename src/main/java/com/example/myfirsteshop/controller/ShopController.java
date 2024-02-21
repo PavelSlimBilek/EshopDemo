@@ -1,4 +1,4 @@
-package com.example.myfirsteshop.api;
+package com.example.myfirsteshop.controller;
 
 import com.example.myfirsteshop.model.Brand;
 import com.example.myfirsteshop.model.ProdType;
